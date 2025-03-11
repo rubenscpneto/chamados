@@ -52,7 +52,6 @@ function AuthProvider({ children }) {
         setLoadingAuth(false);
         toast.success("Bem-vindo(a) de volta!");
         navigate("/dashboard");
-        // setLoading(false);
       })
       .catch((error) => {
         console.log(error);
@@ -112,6 +111,8 @@ function AuthProvider({ children }) {
         logout,
         loadingAuth,
         loading,
+        storageUser,
+        setUser
       }}
     >
       {children}

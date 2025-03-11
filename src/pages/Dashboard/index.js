@@ -1,17 +1,21 @@
-import { useContext } from "react"
-import { AuthContext } from "../../contexts/auth"
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/auth";
 
-export default function Dashboard(){
-    const { logout } = useContext(AuthContext);
+import Header from "../../components/Header";
 
-    async function handleLogout() {
-        await logout();
-    }
+export default function Dashboard() {
+  const { logout } = useContext(AuthContext);
 
-    return(
-        <div>
-            <h1>Página Dashboard</h1>
-            <button onClick={handleLogout}>Sair da conta</button>
-        </div>
-    )
+  async function handleLogout() {
+    await logout();
+  }
+
+  return (
+    <div>
+      <Header />
+
+      <h1>Página Dashboard</h1>
+      <button onClick={handleLogout}>Sair da conta</button>
+    </div>
+  );
 }
